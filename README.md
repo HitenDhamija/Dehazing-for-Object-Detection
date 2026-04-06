@@ -4,15 +4,23 @@ This project removes fog from foggy images and aligns the dehazed output with YO
 
 ## Overview
 
-- Input: foggy/hazy images
+- Input: foggy/hazy images from SIR_IMAGES and RTTS datasets
 - Dehazing models used:
   - AODNet
   - FFA-Net
   - GridDehazeNet
   - DCP (Dark Channel Prior)
-  - DehazeFormer
-  - FFA-Net Enhanced
 - Output: dehazed image + YOLO-aligned object detection results
+
+## Model Performance Metrics
+
+| Rank | Model              | Total Det | Avg/Img | Classes | Det Rate | Est. Precision | Est. Recall | Est. F1 | Est. Accuracy |
+|------|--------------------|-----------|---------|---------|----------|----------------|-------------|--------|---------------|
+| 1    | DCP               | 34       | 4.25   | 6      | 85.0%   | 0.064         | 0.850      | 0.119 | 85.0%        |
+| 2    | AOD-Net           | 27       | 3.38   | 6      | 67.5%   | 0.051         | 0.675      | 0.094 | 67.6%        |
+| 3    | GridDehazeNet1 (Pre-DCP) | 25    | 3.12   | 4      | 62.5%   | 0.031         | 0.625      | 0.060 | 62.4%        |
+| 4    | FFA-Net           | 17       | 2.12   | 4      | 42.5%   | 0.021         | 0.425      | 0.040 | 42.4%        |
+| 5    | FFA-Net Enhanced  | 17       | 2.12   | 4      | 42.5%   | 0.021         | 0.425      | 0.040 | 42.4%        |
 
 ## How it works
 
@@ -23,21 +31,35 @@ This project removes fog from foggy images and aligns the dehazed output with YO
 
 ## Results by Model
 
+### DCP (Dark Channel Prior)
+
+**Foggy image**
+
+![DCP foggy input](datasets/SIR_IMAGES/hazy/5.png)
+
+**Dehazed image**
+
+![DCP dehazed output](outputs/SIR/DCP/5.png)
+
+**YOLO aligned result**
+
+![DCP YOLO output](runs/detect/sir_dcp_refined/5.jpg)
+
+---
+
 ### AODNet
 
 **Foggy image**
 
-![AODNet foggy input](README_images/AODNet/foggy.png)
-
-**Model**: `AODNet`
+![AODNet foggy input](datasets/SIR_IMAGES/hazy/2.png)
 
 **Dehazed image**
 
-![AODNet dehazed output](README_images/AODNet/dehazed.png)
+![AODNet dehazed output](outputs/SIR_AOD_Dehazed/2.png)
 
 **YOLO aligned result**
 
-![AODNet YOLO output](README_images/AODNet/yolo.png)
+![AODNet YOLO output](runs/SIR_AOD_Dehazed_yolo/2.jpg)
 
 ---
 
@@ -45,17 +67,15 @@ This project removes fog from foggy images and aligns the dehazed output with YO
 
 **Foggy image**
 
-![FFA-Net foggy input](README_images/FFA-Net/foggy.png)
-
-**Model**: `FFA-Net`
+![FFA-Net foggy input](datasets/RTTS/hazy/YD_Bing_428.png)
 
 **Dehazed image**
 
-![FFA-Net dehazed output](README_images/FFA-Net/dehazed.png)
+![FFA-Net dehazed output](outputs/FFA/dehazed/YD_Bing_428.png)
 
 **YOLO aligned result**
 
-![FFA-Net YOLO output](README_images/FFA-Net/yolo.png)
+![FFA-Net YOLO output](runs/detect/ffa_dehazed/YD_Bing_428.jpg)
 
 ---
 
@@ -63,77 +83,24 @@ This project removes fog from foggy images and aligns the dehazed output with YO
 
 **Foggy image**
 
-![GridDehazeNet foggy input](README_images/GridDehazeNet/foggy.png)
-
-**Model**: `GridDehazeNet`
+![GridDehazeNet foggy input](datasets/SIR_IMAGES/hazy/6.png)
 
 **Dehazed image**
 
-![GridDehazeNet dehazed output](README_images/GridDehazeNet/dehazed.png)
+![GridDehazeNet dehazed output](outputs/SIR/GridDehazeNet/6.png)
 
 **YOLO aligned result**
 
-![GridDehazeNet YOLO output](README_images/GridDehazeNet/yolo.jpg)
+![GridDehazeNet YOLO output](runs/detect/gridDehazeResults/6.jpg)
 
 ---
-
-### DCP (Dark Channel Prior)
-
-**Foggy image**
-
-![DCP foggy input](README_images/DCP/foggy.png)
-
-**Model**: `DCP`
-
-**Dehazed image**
-
-![DCP dehazed output](README_images/DCP/dehazed.png)
-
-**YOLO aligned result**
-
-![DCP YOLO output](README_images/DCP/yolo.jpg)
-
----
-
-### FFA-Net Enhanced
-
-**Foggy image**
-
-![FFA-Net Enhanced foggy input](README_images/FFA-Net-Enhanced/foggy.png)
-
-**Model**: `FFA-Net Enhanced`
-
-**Dehazed image**
-
-![FFA-Net Enhanced dehazed output](README_images/FFA-Net-Enhanced/dehazed.png)
-
-**YOLO aligned result**
-
-![FFA-Net Enhanced YOLO output](README_images/FFA-Net-Enhanced/yolo.png)
-
----
-
-## Example flow
-
-For each model, this README shows:
-
-1. **Foggy image** — the original hazy input.
-2. **Model name** — the dehazing architecture used.
-3. **Dehazed image** — output after fog removal.
-4. **YOLO aligned result** — object detection result on the dehazed image.
 
 ## Usage
 
-1. Prepare foggy images in `datasets/SIR_IMAGES/hazy/`.
+1. Prepare foggy images in `datasets/SIR_IMAGES/hazy/` or `datasets/RTTS/hazy/`.
 2. Run the dehazing script for the model you want to test.
 3. Run the corresponding YOLO script to generate aligned detection results.
 4. Inspect the outputs and compare the foggy, dehazed, and detected results.
-
-## Notes
-
-- The repository uses multiple dehazing methods aligned with YOLO.
-- This README is designed to show the foggy input first, then the model name, the dehazed result, and the YOLO result for each model.
-- Large model weights and dataset outputs are excluded from the repository and should be configured separately.
 
 ## Model scripts
 
