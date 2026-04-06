@@ -35,15 +35,15 @@ This project removes fog from foggy images and aligns the dehazed output with YO
 
 **Foggy image**
 
-![DCP foggy input](datasets/SIR_IMAGES/hazy/5.png)
+![DCP foggy input](images/dcp_foggy.png)
 
 **Dehazed image**
 
-![DCP dehazed output](outputs/SIR/DCP/5.png)
+![DCP dehazed output](images/dcp_dehazed.png)
 
 **YOLO aligned result**
 
-![DCP YOLO output](runs/detect/sir_dcp_refined/5.jpg)
+![DCP YOLO output](images/dcp_yolo.jpg)
 
 ---
 
@@ -51,15 +51,15 @@ This project removes fog from foggy images and aligns the dehazed output with YO
 
 **Foggy image**
 
-![AODNet foggy input](datasets/SIR_IMAGES/hazy/2.png)
+![AODNet foggy input](images/aodnet_foggy.png)
 
 **Dehazed image**
 
-![AODNet dehazed output](outputs/SIR_AOD_Dehazed/2.png)
+![AODNet dehazed output](images/aodnet_dehazed.png)
 
 **YOLO aligned result**
 
-![AODNet YOLO output](runs/SIR_AOD_Dehazed_yolo/2.jpg)
+![AODNet YOLO output](images/aodnet_yolo.jpg)
 
 ---
 
@@ -67,15 +67,15 @@ This project removes fog from foggy images and aligns the dehazed output with YO
 
 **Foggy image**
 
-![FFA-Net foggy input](datasets/RTTS/hazy/YD_Bing_428.png)
+![FFA-Net foggy input](images/ffa_foggy.png)
 
 **Dehazed image**
 
-![FFA-Net dehazed output](outputs/FFA/dehazed/YD_Bing_428.png)
+![FFA-Net dehazed output](images/ffa_dehazed.png)
 
 **YOLO aligned result**
 
-![FFA-Net YOLO output](runs/detect/ffa_dehazed/YD_Bing_428.jpg)
+![FFA-Net YOLO output](images/ffa_yolo.jpg)
 
 ---
 
@@ -83,15 +83,15 @@ This project removes fog from foggy images and aligns the dehazed output with YO
 
 **Foggy image**
 
-![GridDehazeNet foggy input](datasets/SIR_IMAGES/hazy/6.png)
+![GridDehazeNet foggy input](images/griddehaze_foggy.png)
 
 **Dehazed image**
 
-![GridDehazeNet dehazed output](outputs/SIR/GridDehazeNet/6.png)
+![GridDehazeNet dehazed output](images/griddehaze_dehazed.png)
 
 **YOLO aligned result**
 
-![GridDehazeNet YOLO output](runs/detect/gridDehazeResults/6.jpg)
+![GridDehazeNet YOLO output](images/griddehaze_yolo.jpg)
 
 ---
 
