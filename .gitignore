@@ -166,3 +166,11 @@ datasets/
 # OS files
 .DS_Store
 Thumbs.db
+
+# Ignore embedded model repositories
+models/AOD-Net/
+models/DehazeFormer/
+models/FFA-Net/
+models/GridDehazeNet/
+models/MSBDN/
+models/SwinIR/
