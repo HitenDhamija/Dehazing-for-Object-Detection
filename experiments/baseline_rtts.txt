@@ -1,0 +1,16 @@
+Dataset: RTTS (Real Task-Driven Test Set)
+Input: Hazy images
+Detection Model: YOLOv11m (Ultralytics pretrained)
+
+Baseline Experiment: Detection on hazy images (no dehazing)
+
+Observations:
+
+* Multiple persons detected successfully
+* Some objects detected with low confidence due to haze
+* Partial occlusion and reduced clarity observed
+* Possible missed detections in dense haze regions
+* Bounding boxes sometimes less precise
+
+Conclusion:
+Haze negatively affects object detection performance.

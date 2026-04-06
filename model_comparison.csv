@@ -1,0 +1,6 @@
+Model,Total Detections,Avg Objects/Image,Total Images,Detection Rate (%),Unique Classes
+AOD-Net,27,3.38,8,67.5,6
+FFA-Net,17,2.12,8,42.5,4
+FFA-Net Enhanced,17,2.12,8,42.5,4
+DCP,34,4.25,8,85.0,6
+GridDehazeNet1 (Pre-DCP),25,3.12,8,62.5,4

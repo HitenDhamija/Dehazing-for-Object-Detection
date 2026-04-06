@@ -1,0 +1,6 @@
+Rank,Model,Total Det,Avg/Img,Classes,Det Rate,Est. Precision,Est. Recall,Est. F1,Est. Accuracy
+1,DCP,34,4.25,6,85.0%,0.064,0.850,0.119,85.0%
+2,AOD-Net,27,3.38,6,67.5%,0.051,0.675,0.094,67.6%
+3,GridDehazeNet1 (Pre-DCP),25,3.12,4,62.5%,0.031,0.625,0.060,62.4%
+4,FFA-Net,17,2.12,4,42.5%,0.021,0.425,0.040,42.4%
+5,FFA-Net Enhanced,17,2.12,4,42.5%,0.021,0.425,0.040,42.4%
